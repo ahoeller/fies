@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<injection>
+	<fault>
+		<id>1</id>
+		<component>CPU</component>
+		<target>R0</target>
+		<mode>register:stuck-at-1</mode>
+		<type>permanent</type>
+		<params> 
+			<mask>0x1</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>2</id>
+		<component>MEMORY</component>
+		<target>RAM</target>
+		<mode>memory-cell:bit-flip</mode>
+		<trigger>time</trigger>
+		<timer>200000</timer>
+		<type>transient</type>
+		<duration>2000</duration>
+		<params> 
+			<address>0xAF</address>
+			<mask>0x2</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>3</id>
+		<component>CPU</component>
+		<target>Instruction-decoder</target>
+		<mode>new-value</mode>
+		<trigger>PC</trigger>
+		<timer>10000</timer>
+		<type>intermittend</type>
+		<duration>1000</duration>
+		<interval>2000</interval>
+		<params> 
+			<address>0xabcdef</address>
+			<instruction>MOV</instruction>
+		</params>
+	</fault>
+</injection>

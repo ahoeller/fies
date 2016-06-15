@@ -1,0 +1,74 @@
+Welcome to FIES - type 'help' for more information
+
+fault_reload
+Configuration file loaded successfully
+
+info
+faults
+--------------------------------------------------------------------------------
+id: 1
+mode: CFRD00
+component: RAM
+target: MEMORY CELL
+type: PERMANENT
+trigger: ACCESS
+parameters: 
+	address: 0x40200abc
+	cf_address: 0x40200abc
+	mask: 0xf
+	set bit: 0x2
+active: 1
+--------------------------------------------------------------------------------
+id: 2
+mode: CFRD01
+component: RAM
+target: MEMORY CELL
+type: PERMANENT
+trigger: ACCESS
+parameters: 
+	address: 0x40200ac6
+	cf_address: 0x40200ac6
+	mask: 0xfff7
+	set bit: 0x400
+active: 1
+--------------------------------------------------------------------------------
+id: 3
+mode: CFRD10
+component: RAM
+target: MEMORY CELL
+type: PERMANENT
+trigger: ACCESS
+parameters: 
+	address: 0x40200ad0
+	cf_address: 0x40200ad0
+	mask: 0x5321
+	set bit: 0x1
+active: 1
+--------------------------------------------------------------------------------
+id: 4
+mode: CFRD11
+component: RAM
+target: MEMORY CELL
+type: PERMANENT
+trigger: ACCESS
+parameters: 
+	address: 0x40200ada
+	cf_address: 0x40200ada
+	mask: 0xff00
+	set bit: 0x400
+active: 1
+--------------------------------------------------------------------------------
+
+------------------------------Statistics----------------------------------------
+Injected faults: 		 | Number: 
+RAM permanent 			 | 4 
+RAM transient 			 | 0 
+CPU permanent 			 | 0 
+CPU transient 			 | 0 
+Register permanent 		 | 0 
+Register transient 		 | 0 
+--------------------------------------------------------------------------------
+Total injected faults 		 | 4 
+Total detected faults 		 | 2 
+Total diagnostic coverage [%] 	 | 50.000000 
+--------------------------------------------------------------------------------

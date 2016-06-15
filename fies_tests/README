@@ -1,0 +1,10 @@
+QEMU Commandline:
+>> ../arm-softmmu/qemu-system-arm  -M versatilepb -cpu arm926 -semihosting -nodefaults -kernel test_qemu_baremetal -append "arguments" -fi faultdefinition.xml
+
+Minimal QEMU Commandline:
+>> ../arm-softmmu/qemu-system-arm semihosting -kernel test_qemu_baremetal -append "arguments" -fi faultdefinition.xml
+
+Compile:
+Code Sourcery
+Bzw.:
+arm-none-eabi-gcc -marm files.c --specs=nosys.specs

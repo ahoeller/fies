@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<injection>	
+	
+	<fault>
+		<id>1</id>
+		<component>REGISTER</component>
+		<target>REGISTER CELL</target>
+		<mode>WDF0</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0xa</address>
+			<mask>0x00FF</mask>
+		</params>
+	</fault>
+	
+	
+
+
+	<fault>
+		<id>7</id>
+		<component>CPU</component>
+		<target>CONDITION FLAGS</target>
+		<mode>NF</mode>
+		<trigger>TIME</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<set_bit>0x0</set_bit>
+		</params>
+	</fault>
+	
+	<fault>
+		<id>8</id>
+		<component>RAM</component>2
+		<target>MEMORY CELL</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x40200aa8</address>
+			<mask>0x12341234</mask>
+		</params>
+	</fault>
+
+
+
+	<fault>
+		<id>1</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>DRDF0</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x40200ab4</address>
+			<mask>0x00FF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>2</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>CFST00</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x40200ab6</address>
+			<cf_address>0x40200ab6</cf_address>
+			<mask>0xF003</mask>
+			<set_bit>0x1</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>3</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>WDF1</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x40200ab8</address>
+			<mask>0xFFFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>4</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x40200aba</address>
+			<mask>0x1</mask>
+			<set_bit>0x1</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>5</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x40200abc</address>
+			<mask>0x8000</mask>
+			<set_bit>0x8000</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>6</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x40200abe</address>
+			<mask>0x12341234</mask>
+		</params>
+	</fault>
+	
+
+	<fault>
+		<id>8</id>
+		<component>REGISTER</component>
+		<target>REGISTER CELL</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x7</address>
+			<mask>0xF0000</mask>
+			<set_bit>0xF0000</set_bit>
+		</params>
+	</fault>
+	
+	
+	<fault>
+		<id>35</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>NEW VALUE</mode>
+		<trigger>PC</trigger>
+		<params> 
+			<address>0x40003b8c</address>
+			<mask>0x402003AB</mask>
+			<instruction>0x402005A0</instruction>
+		</params>
+	</fault>
+	<fault>
+		<id>34</id>
+		<component>CPU</component>
+		<target>INSTRUCTION EXECUTION</target>
+		<mode>NEW VALUE</mode>
+		<trigger>PC</trigger>
+		<params> 
+			<address>0x40003b8c</address>
+			<instruction>0xDEADBEEF</instruction>
+		</params>
+	</fault>
+	<fault>
+		<id>33</id>
+		<component>CPU</component>
+		<target>CONDITION FLAGS</target>
+		<mode>ZF</mode>
+		<trigger>PC</trigger>
+		<params> 
+			<address>0x40003b8c</address>
+			<set_bit>0x1</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>32</id>
+		<component>CPU</component>
+		<target>CONDITION FLAGS</target>
+		<mode>ZF</mode>
+		<trigger>TIME</trigger>
+		<type>INTERMITTEND</type>
+		<timer>1000MS</timer>
+		<duration>20000MS</duration>
+		<interval>2000MS</interval>
+		<params> 
+			<set_bit>0x1</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>31</id>
+		<component>CPU</component>
+		<target>INSTRUCTION EXECUTION</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0xe0a22002</address>
+			<instruction>0xDEADBEEF</instruction>
+		</params>
+	</fault>
+	<fault>
+		<id>30</id>
+		<component>CPU</component>
+		<target>INSTRUCTION DECODER</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0xe0a22002</address>
+			<instruction>0xe0F20032</instruction>
+		</params>
+	</fault>
+	<fault>
+		<id>29</id>
+		<component>REGISTER</component>
+		<target>REGISTER CELL</target>
+		<mode>CFIR00</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>1</address>
+			<cf_address>2</cf_address>
+			<mask>0xFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>28</id>
+		<component>REGISTER</component>
+		<target>REGISTER CELL</target>
+		<mode>RDF0</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>1</address>
+			<mask>0xFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>27</id>
+		<component>REGISTER</component>
+		<target>ADDRESS DECODER</target>
+		<mode>BIT-FLIP</mode>
+		<trigger>ACCESS</trigger>
+		<type>INTERMITTEND</type>
+		<timer>1000MS</timer>
+		<duration>20000MS</duration>
+		<interval>2000MS</interval>
+		<params> 
+			<address>2</address>
+			<mask>0x2</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>26</id>
+		<component>REGISTER</component>
+		<target>ADDRESS DECODER</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>INTERMITTEND</type>
+		<timer>1000MS</timer>
+		<duration>20000MS</duration>
+		<interval>2000MS</interval>
+		<params> 
+			<address>0x5</address>
+			<mask>0x1</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>25</id>
+		<component>REGISTER</component>
+		<target>ADDRESS DECODER</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>INTERMITTEND</type>
+		<timer>1000MS</timer>
+		<duration>20000MS</duration>
+		<interval>2000MS</interval>
+		<params> 
+			<address>5</address>
+			<mask>0xB</mask>
+			<set_bit>0x9</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>24</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>CFRD00</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40201688</address>
+			<cf_address>0x40003ba8</cf_address>
+			<mask>0xFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>23</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>CFWD00</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40201688</address>
+			<cf_address>0x40104130</cf_address>
+			<mask>0xFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>22</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>CFTR11</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40201688</address>
+			<cf_address>0x40104130</cf_address>
+			<mask>0xFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>21</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>CFDS0W01</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40104130</address>
+			<cf_address>0x40201688</cf_address>
+			<mask>0xFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>20</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>CFST11</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40104130</address>
+			<cf_address>0x40201688</cf_address>
+			<mask>0xFF</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>19</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>RDF00</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>5000MS</timer>
+		<duration>6000MS</duration>
+		<params> 
+			<address>0x40201678</address>
+			<mask>0x3</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>18</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>DRDF0</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40003ba8</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+	 
+
+	<fault>
+		<id>16</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>IRF0</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40003ba8</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+		<fault>
+		<id>17</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>IRF1</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40003ba8</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>14</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>WDF1</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40104130</address>
+			<mask>0x1B</mask>
+		</params>
+	</fault>
+		<fault>
+		<id>15</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>WDF0</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40104130</address>
+			<mask>0x4B</mask>
+		</params>
+	</fault>
+		<fault>
+		<id>13</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>TF0</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>10000MS</duration>
+		<params> 
+			<address>0x40104130</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>11</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>INTERMITTEND</type>
+		<timer>5000MS</timer>
+		<duration>50000MS</duration>
+		<interval>5000MS</interval>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0x402003AB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>12</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0xB</mask>
+			<set_bit>0x9</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>10</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>BIT-FLIP</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>50000MS</duration>
+		<params> 
+			<address>0x40005248</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>3</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>BIT-FLIP</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>1000MS</timer>
+		<duration>50000MS</duration>
+		<params> 
+			<address>0x40005248</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>4</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>BIT-FLIP</mode>
+		<trigger>ACCESS</trigger>
+		<type>INTERMITTEND</type>
+		<timer>5000MS</timer>
+		<duration>50000MS</duration>
+		<interval>5000MS</interval>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>7</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0xB</mask>
+			<set_bit>0x9</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>2</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>BIT-FLIP</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0xB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>5</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>INTERMITTEND</type>
+		<timer>5000MS</timer>
+		<duration>50000MS</duration>
+		<interval>5000MS</interval>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>00x402003AB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>6</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>NEW VALUE</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>20000MS</timer>
+		<duration>50000MS</duration>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0x402003AB</mask>
+		</params>
+	</fault>
+	<fault>
+		<id>7</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0xB</mask>
+			<set_bit>0x9</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>8</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>TRANSIENT</type>
+		<timer>20000MS</timer>
+		<duration>50000MS</duration>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0xB</mask>
+			<set_bit>0x9</set_bit>
+		</params>
+	</fault>
+	<fault>
+		<id>9</id>
+		<component>RAM</component>
+		<target>ADDRESS DECODER</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>INTERMITTEND</type>
+		<timer>5000MS</timer>
+		<duration>50000MS</duration>
+		<interval>5000MS</interval>
+		<params> 
+			<address>0x402005A0</address>
+			<mask>0xB</mask>
+			<set_bit>0x9</set_bit>
+		</params>
+	</fault>
+-->
+</injection>
+

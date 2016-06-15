@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=/usr/local/lib
+includedir=/usr/local/include/cacard
+
+Name: cacard
+Description: CA Card library
+Version: 1.7.0
+
+Requires:  nss
+Libs: -L${libdir} -lcacard
+Libs.private:
+Cflags: -I${includedir}

@@ -59,7 +59,7 @@ arm-softmmu/qemu-system-arm -semihosting -kernel <binary>
 ### Application Profiling
 Use the `-profiling` flag to record register and memory usage
 
-Flags:
+Options:
 * `m` profile memory usage
 * `r` profile register usage
 
@@ -95,8 +95,8 @@ XML fault lib example:
 ```
 
 XML Fields:
-*`<fault>`: Defines start and end of fault description. Multiple faults are injected concurrently if multiple fault descriptions are provided.
-*`<id>`: Defines fault ID
-*`<component>`: Defines the victim component (`CPU`, `RAM`, or `REGISTER`)
-*`<target>`: Defines the target point of a fault as follows...
-**for `CPU` faults: `INSTRUCTION DECODER`, `INSTRUCTION EXECUTION`, or `CONDITION FLAGS`
+* `<fault>`: Defines start and end of fault description. Multiple faults are injected concurrently if multiple fault descriptions are provided.
+* `<id>`: Defines fault ID
+* `<component>`: Defines the victim component (`CPU`, `RAM`, or `REGISTER`)
+* `<target>`: Defines the target point of a fault as follows...
+** for `CPU` faults: `INSTRUCTION DECODER`, `INSTRUCTION EXECUTION`, or `CONDITION FLAGS`

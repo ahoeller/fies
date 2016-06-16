@@ -1,10 +1,10 @@
-FAIL* - FAult Injection Leveraged
-=======================================
+FIES - Fault Injection for Evaluation of Software-based fault tolerance
+==========================================================================
 
-FIES (Fault Injection for Evaluation of Software-based fault tolerance) is a QEMU fault injection extension.
+FIES is a QEMU fault injection extension.
  
 The following picture shows the main points, where FIES takes action during an QEMU binary translation:
-![alt tag](doc/)
+![alt tag](doc/fies_tcg.png)
 
 
 Building FIES

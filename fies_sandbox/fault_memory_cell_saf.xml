@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<injection>
+	<fault>
+		<id>1</id>
+		<component>RAM</component>
+		<target>MEMORY CELL</target>
+		<mode>SF</mode>
+		<trigger>ACCESS</trigger>
+		<type>PERMANENT</type>
+		<params> 
+			<address>0x07FFFFDC</address>
+			<mask>0xFF</mask>
+			<set_bit>0xFF</set_bit>
+		</params>
+	</fault>
+</injection>

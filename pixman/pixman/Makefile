@@ -15,7 +15,7 @@
 
 
 
-VPATH = /home/bernhardsp/Quemu/pixman/pixman
+
 am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'
 am__make_running_with_option = \
   case $${target_option-} in \
@@ -234,7 +234,7 @@ AM_V_at = $(am__v_at_$(V))
 am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
 am__v_at_0 = @
 am__v_at_1 = 
-DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
@@ -301,20 +301,20 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/bernhardsp/Quemu/pixman/missing aclocal-1.14
+ACLOCAL = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = ar
-AUTOCONF = ${SHELL} /home/bernhardsp/Quemu/pixman/missing autoconf
-AUTOHEADER = ${SHELL} /home/bernhardsp/Quemu/pixman/missing autoheader
-AUTOMAKE = ${SHELL} /home/bernhardsp/Quemu/pixman/missing automake-1.14
+AUTOCONF = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing autoconf
+AUTOHEADER = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing autoheader
+AUTOMAKE = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing automake-1.14
 AWK = mawk
 CC = gcc
 CCAS = gcc
 CCASDEPMODE = depmode=gcc3
-CCASFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32  
+CCASFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32 -I/usr/include/libxml2 -lxml2
 CCDEPMODE = depmode=gcc3
-CFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32   -Wall -fno-strict-aliasing -fvisibility=hidden
+CFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32 -I/usr/include/libxml2 -lxml2 -Wall -fno-strict-aliasing -fvisibility=hidden
 CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
@@ -343,13 +343,13 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /usr/bin/ld
 LDFLAGS = 
 LIBOBJS = 
-LIBS = 
+LIBS = -lxml2 -lrt -pthread -lgthread-2.0 -lglib-2.0   -lxml2 -lz -lcurl   
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 LT_VERSION_INFO = 18:4:18
-MAKEINFO = ${SHELL} /home/bernhardsp/Quemu/pixman/missing makeinfo
+MAKEINFO = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 MMX_CFLAGS = -mmmx -Winline
@@ -387,10 +387,10 @@ STRIP = strip
 TOOLCHAIN_SUPPORTS__THREAD = 
 VERSION = 0.18.4
 VMX_CFLAGS = 
-abs_builddir = /home/bernhardsp/FIES/pixman/pixman
-abs_srcdir = /home/bernhardsp/Quemu/pixman/pixman
-abs_top_builddir = /home/bernhardsp/FIES/pixman
-abs_top_srcdir = /home/bernhardsp/Quemu/pixman
+abs_builddir = /home/bernhardsp/git_sandbox/fies/pixman/pixman
+abs_srcdir = /home/bernhardsp/git_sandbox/fies/pixman/pixman
+abs_top_builddir = /home/bernhardsp/git_sandbox/fies/pixman
+abs_top_srcdir = /home/bernhardsp/git_sandbox/fies/pixman
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -419,7 +419,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/bernhardsp/Quemu/pixman/install-sh
+install_sh = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -433,12 +433,12 @@ program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
-srcdir = /home/bernhardsp/Quemu/pixman/pixman
+srcdir = .
 sysconfdir = ${prefix}/etc
 target_alias = 
 top_build_prefix = ../
 top_builddir = ..
-top_srcdir = /home/bernhardsp/Quemu/pixman
+top_srcdir = ..
 lib_LTLIBRARIES = libpixman-1.la
 libpixman_1_la_LDFLAGS = -version-info $(LT_VERSION_INFO) \
 	-no-undefined  $(am__append_2) \

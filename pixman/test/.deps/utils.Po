@@ -22,8 +22,7 @@ utils.o: utils.c /usr/include/stdc-predef.h utils.h /usr/include/stdlib.h \
  /usr/include/i386-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/i386-linux-gnu/bits/stdlib-float.h \
  /usr/include/i386-linux-gnu/bits/stdlib.h ../config.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman-private.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman.h ../pixman/pixman-version.h \
+ ../pixman/pixman-private.h ../pixman/pixman.h ../pixman/pixman-version.h \
  /usr/lib/gcc/i686-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
  /usr/include/i386-linux-gnu/bits/wchar.h /usr/include/xlocale.h \
  /usr/include/assert.h /usr/include/stdio.h /usr/include/libio.h \
@@ -35,8 +34,7 @@ utils.o: utils.c /usr/include/stdc-predef.h utils.h /usr/include/stdlib.h \
  /usr/include/i386-linux-gnu/bits/stdio2.h /usr/include/string.h \
  /usr/include/i386-linux-gnu/bits/string.h \
  /usr/include/i386-linux-gnu/bits/string2.h \
- /usr/include/i386-linux-gnu/bits/string3.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman-compiler.h
+ /usr/include/i386-linux-gnu/bits/string3.h ../pixman/pixman-compiler.h
 
 /usr/include/stdc-predef.h:
 
@@ -100,9 +98,9 @@ utils.h:
 
 ../config.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman-private.h:
+../pixman/pixman-private.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman.h:
+../pixman/pixman.h:
 
 ../pixman/pixman-version.h:
 
@@ -142,4 +140,4 @@ utils.h:
 
 /usr/include/i386-linux-gnu/bits/string3.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman-compiler.h:
+../pixman/pixman-compiler.h:

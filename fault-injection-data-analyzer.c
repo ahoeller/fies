@@ -1,3 +1,9 @@
+/*
+ * fault-injection-data-analyzer.c
+ *
+ *  Created on: 07.08.2014
+ *      Author: Gerhard Schoenfelder
+ */
 #include "fault-injection-data-analyzer.h"
 #include "fault-injection-controller.h"
 #include "fault-injection-config.h"

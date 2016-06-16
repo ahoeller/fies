@@ -36,7 +36,7 @@ VNC_WS_CFLAGS=
 CONFIG_FNMATCH=y
 VERSION=1.7.0
 PKGVERSION=
-SRC_PATH=/home/bernhardsp/FIES
+SRC_PATH=/home/bernhardsp/git_sandbox/fies
 TARGET_DIRS=arm-softmmu
 CONFIG_SDL=y
 SDL_CFLAGS=-D_GNU_SOURCE=1 -D_REENTRANT -I/usr/include/SDL  
@@ -119,7 +119,7 @@ WINDRES=windres
 LIBTOOL=libtool
 CFLAGS=-O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g 
 QEMU_CFLAGS=-Werror -fPIE -DPIE -m32 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wall -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -I/usr/include/libxml2  -Wendif-labels -Wmissing-include-dirs -Wempty-body -Wnested-externs -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wold-style-declaration -Wold-style-definition -Wtype-limits -fstack-protector-all -I/usr/include/p11-kit-1    -I/usr/include/libpng12   -I/usr/include/nss -I/usr/include/nspr   -pthread -I/usr/include/glib-2.0 -I/usr/lib/i386-linux-gnu/glib-2.0/include   -I$(SRC_PATH)/pixman/pixman -I$(BUILD_DIR)/pixman/pixman 
-QEMU_INCLUDES=-I$(SRC_PATH)/tcg -I$(SRC_PATH)/tcg/$(ARCH) -I$(SRC_PATH)/linux-headers -I/home/bernhardsp/FIES/linux-headers -I. -I$(SRC_PATH) -I$(SRC_PATH)/include -I$(SRC_PATH)/libcacard
+QEMU_INCLUDES=-I$(SRC_PATH)/tcg -I$(SRC_PATH)/tcg/$(ARCH) -I$(SRC_PATH)/linux-headers -I/home/bernhardsp/git_sandbox/fies/linux-headers -I. -I$(SRC_PATH) -I$(SRC_PATH)/include -I$(SRC_PATH)/libcacard
 AUTOCONF_HOST := 
 LDFLAGS=-Wl,--warn-common -Wl,-z,relro -Wl,-z,now -pie -m32 -g -lxml2 
 LIBTOOLFLAGS= -Wc,-fstack-protector-all

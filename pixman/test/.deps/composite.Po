@@ -1,5 +1,5 @@
-composite.o: composite.c /usr/include/stdc-predef.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman.h ../pixman/pixman-version.h \
+composite.o: composite.c /usr/include/stdc-predef.h ../pixman/pixman.h \
+ ../pixman/pixman-version.h \
  /usr/lib/gcc/i686-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
  /usr/include/features.h /usr/include/i386-linux-gnu/sys/cdefs.h \
  /usr/include/i386-linux-gnu/bits/wordsize.h \
@@ -42,7 +42,7 @@ composite.o: composite.c /usr/include/stdc-predef.h \
 
 /usr/include/stdc-predef.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman.h:
+../pixman/pixman.h:
 
 ../pixman/pixman-version.h:
 

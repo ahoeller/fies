@@ -444,7 +444,7 @@ static QemuOptsList qemu_machine_opts = {
              .type = QEMU_OPT_BOOL,
              .help = "Set on/off to enable/disable fault injection",
             },
-
+            //ah
             {
              .name = "profile",
              .type = QEMU_OPT_BOOL,
@@ -2851,7 +2851,7 @@ int main(int argc, char **argv, char **envp)
  	{
  		//fault_counter,
  		fault_library_path,
- 		sbst_cycle_count,
+ 		//sbst_cycle_count,
  		//file_input_to_use_index,
  		//file_input_to_use_address_index
  	};
@@ -3576,7 +3576,8 @@ int main(int argc, char **argv, char **envp)
             	{
             		//if no options are given all profiling functions are activated
             		profile_ram_addresses = 1;
-
+            		profile_condition_flags = 1;
+            		profile_pc_status = 1;
             		profile_registers = 1;
             	}
             	opt_str = (char*)malloc((strlen(optarg)+1) * sizeof(char));
@@ -3593,6 +3594,12 @@ int main(int argc, char **argv, char **envp)
 						case 'm':
 							profile_ram_addresses = 1;
 							error_report("Profile memory");
+							break;
+						case 'c':
+							profile_condition_flags = 1;
+							break;
+						case 'p':
+							profile_pc_status = 1;
 							break;
 						default:
 							break;
@@ -3627,10 +3634,15 @@ int main(int argc, char **argv, char **envp)
 						strcpy(fault_library_name, sep_str);
 						error_report("Fault libary name: %s",fault_library_name);
             			break;
-            		case sbst_cycle_count:
-						sbst_cycle_count_address =  strtol(sep_str, NULL, 16);
+            		/*case sbst_cycle_count:
+						//sbst_cycle_count_address =  strtol(sep_str, NULL, 16);
             			break;
-
+            		case file_input_to_use_index:
+                        file_input_to_use = strtol(sep_str, NULL, 16);
+                        break;
+                    case file_input_to_use_address_index:
+                        file_input_to_use_address = strtol(sep_str, NULL, 16);
+                        break;*/
             		default:
             			fprintf(stderr, "Too many parameters specified!\n");
             			error_report("Too many parameters specified!\n");

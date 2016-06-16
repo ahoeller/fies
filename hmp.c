@@ -152,9 +152,6 @@ void hmp_info_faults(Monitor *mon, const QDict *qdict)
 	monitor_printf(mon, "\n------------------------------Statistics----------------------------------------\n");
 
 
-	total_num_detected_faults = get_num_detected_faults();
-    total_num_injected_faults = get_num_injected_faults();
-
 	total_num_injected_faults_ram_trans = get_num_injected_faults_ram_trans();
 	total_num_injected_faults_ram_perm = get_num_injected_faults_ram_perm();
 
@@ -174,34 +171,53 @@ void hmp_info_faults(Monitor *mon, const QDict *qdict)
 
 	monitor_printf(mon, "--------------------------------------------------------------------------------\n");
 
+//	total_num_detected_faults_ram_perm = get_num_detected_faults_ram_perm();
+//	total_num_detected_faults_ram_trans = get_num_detected_faults_ram_trans();
+//
+//	total_num_detected_faults_cpu_perm = get_num_detected_faults_cpu_perm();
+//	total_num_detected_faults_cpu_trans = get_num_detected_faults_cpu_trans();
+//
+//	total_num_detected_faults_register_perm = get_num_detected_faults_register_perm();
+//	total_num_detected_faults_register_trans = get_num_detected_faults_register_trans();
+//
+//	monitor_printf(mon, "Detected faults: \t\t | Number: \n");
+//	monitor_printf(mon, "RAM permanent \t\t\t | %d \n", total_num_detected_faults_ram_perm);
+//	monitor_printf(mon, "RAM transient \t\t\t | %d \n", total_num_detected_faults_ram_trans);
+//	monitor_printf(mon, "CPU permanent \t\t\t | %d \n", total_num_detected_faults_cpu_perm);
+//	monitor_printf(mon, "CPU transient \t\t\t | %d \n", total_num_detected_faults_cpu_trans);
+//	monitor_printf(mon, "Register permanent \t\t | %d \n", total_num_detected_faults_register_perm);
+//	monitor_printf(mon, "Register transient \t\t | %d \n", total_num_detected_faults_register_trans);
+//
+//	monitor_printf(mon, "--------------------------------------------------------------------------------\n");
+//
+//	if (total_num_injected_faults_ram_perm)
+//		dc_ram_perm = (total_num_detected_faults_ram_perm * 100.0f) / total_num_injected_faults_ram_perm;
+//
+//	if (total_num_injected_faults_ram_trans)
+//		dc_ram_trans = (total_num_detected_faults_ram_trans * 100.0f) / total_num_injected_faults_ram_trans;
+//
+//	if (total_num_injected_faults_cpu_perm)
+//		dc_cpu_perm = (total_num_detected_faults_cpu_perm * 100.0f) / total_num_injected_faults_cpu_perm;
+//	if (total_num_injected_faults_cpu_trans)
+//		dc_cpu_trans = (total_num_detected_faults_cpu_trans * 100.0f) / total_num_injected_faults_cpu_trans;
+//
+//	if (total_num_injected_faults_register_perm)
+//		dc_register_perm = (total_num_detected_faults_register_perm * 100.0f) / total_num_injected_faults_register_perm;
+//	if (total_num_injected_faults_register_trans)
+//		dc_register_trans = (total_num_detected_faults_register_trans * 100.0f) / total_num_injected_faults_register_trans;
+//
+//	monitor_printf(mon, "Diagnostic coverages: \t\t | Number: \n");
+//	monitor_printf(mon, "RAM permanent \t\t\t | %f \n", dc_ram_perm);
+//	monitor_printf(mon, "RAM transient \t\t\t | %f \n", dc_ram_trans);
+//	monitor_printf(mon, "CPU permanent \t\t\t | %f \n", dc_cpu_perm);
+//	monitor_printf(mon, "CPU transient \t\t\t | %f \n", dc_cpu_trans);
+//	monitor_printf(mon, "Register permanent \t\t | %f \n", dc_register_perm);
+//	monitor_printf(mon, "Register transient \t\t | %f \n", dc_register_trans);
+//
+//	monitor_printf(mon, "--------------------------------------------------------------------------------\n");
 
-	monitor_printf(mon, "----------------------------------SBST Statistics ------------------------------\n");
-
-	if (total_num_injected_faults_ram_perm)
-		dc_ram_perm = (total_num_detected_faults_ram_perm * 100.0f) / total_num_injected_faults_ram_perm;
-
-	if (total_num_injected_faults_ram_trans)
-		dc_ram_trans = (total_num_detected_faults_ram_trans * 100.0f) / total_num_injected_faults_ram_trans;
-
-	if (total_num_injected_faults_cpu_perm)
-		dc_cpu_perm = (total_num_detected_faults_cpu_perm * 100.0f) / total_num_injected_faults_cpu_perm;
-	if (total_num_injected_faults_cpu_trans)
-		dc_cpu_trans = (total_num_detected_faults_cpu_trans * 100.0f) / total_num_injected_faults_cpu_trans;
-
-	if (total_num_injected_faults_register_perm)
-		dc_register_perm = (total_num_detected_faults_register_perm * 100.0f) / total_num_injected_faults_register_perm;
-	if (total_num_injected_faults_register_trans)
-		dc_register_trans = (total_num_detected_faults_register_trans * 100.0f) / total_num_injected_faults_register_trans;
-
-	monitor_printf(mon, "Diagnostic coverages: \t\t | Number: \n");
-	monitor_printf(mon, "RAM permanent \t\t\t | %f \n", dc_ram_perm);
-	monitor_printf(mon, "RAM transient \t\t\t | %f \n", dc_ram_trans);
-	monitor_printf(mon, "CPU permanent \t\t\t | %f \n", dc_cpu_perm);
-	monitor_printf(mon, "CPU transient \t\t\t | %f \n", dc_cpu_trans);
-	monitor_printf(mon, "Register permanent \t\t | %f \n", dc_register_perm);
-	monitor_printf(mon, "Register transient \t\t | %f \n", dc_register_trans);
-
-
+	total_num_detected_faults = get_num_detected_faults();
+	total_num_injected_faults = get_num_injected_faults();
 
 	if (total_num_injected_faults)
 		dc_total = (total_num_detected_faults * 100.0f) / total_num_injected_faults;

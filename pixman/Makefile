@@ -14,7 +14,7 @@
 
 
 
-VPATH = /home/bernhardsp/Quemu/pixman
+
 am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'
 am__make_running_with_option = \
   case $${target_option-} in \
@@ -223,20 +223,20 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/bernhardsp/Quemu/pixman/missing aclocal-1.14
+ACLOCAL = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = ar
-AUTOCONF = ${SHELL} /home/bernhardsp/Quemu/pixman/missing autoconf
-AUTOHEADER = ${SHELL} /home/bernhardsp/Quemu/pixman/missing autoheader
-AUTOMAKE = ${SHELL} /home/bernhardsp/Quemu/pixman/missing automake-1.14
+AUTOCONF = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing autoconf
+AUTOHEADER = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing autoheader
+AUTOMAKE = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing automake-1.14
 AWK = mawk
 CC = gcc
 CCAS = gcc
 CCASDEPMODE = depmode=gcc3
-CCASFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32  
+CCASFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32 -I/usr/include/libxml2 -lxml2
 CCDEPMODE = depmode=gcc3
-CFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32   -Wall -fno-strict-aliasing -fvisibility=hidden
+CFLAGS = -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g  -fPIC -m32 -I/usr/include/libxml2 -lxml2 -Wall -fno-strict-aliasing -fvisibility=hidden
 CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
@@ -265,13 +265,13 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /usr/bin/ld
 LDFLAGS = 
 LIBOBJS = 
-LIBS = 
+LIBS = -lxml2 -lrt -pthread -lgthread-2.0 -lglib-2.0   -lxml2 -lz -lcurl   
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 LT_VERSION_INFO = 18:4:18
-MAKEINFO = ${SHELL} /home/bernhardsp/Quemu/pixman/missing makeinfo
+MAKEINFO = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 MMX_CFLAGS = -mmmx -Winline
@@ -309,10 +309,10 @@ STRIP = strip
 TOOLCHAIN_SUPPORTS__THREAD = 
 VERSION = 0.18.4
 VMX_CFLAGS = 
-abs_builddir = /home/bernhardsp/FIES/pixman
-abs_srcdir = /home/bernhardsp/Quemu/pixman
-abs_top_builddir = /home/bernhardsp/FIES/pixman
-abs_top_srcdir = /home/bernhardsp/Quemu/pixman
+abs_builddir = /home/bernhardsp/git_sandbox/fies/pixman
+abs_srcdir = /home/bernhardsp/git_sandbox/fies/pixman
+abs_top_builddir = /home/bernhardsp/git_sandbox/fies/pixman
+abs_top_srcdir = /home/bernhardsp/git_sandbox/fies/pixman
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -341,7 +341,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/bernhardsp/Quemu/pixman/install-sh
+install_sh = ${SHELL} /home/bernhardsp/git_sandbox/fies/pixman/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -355,12 +355,12 @@ program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
-srcdir = /home/bernhardsp/Quemu/pixman
+srcdir = .
 sysconfdir = ${prefix}/etc
 target_alias = 
 top_build_prefix = 
 top_builddir = .
-top_srcdir = /home/bernhardsp/Quemu/pixman
+top_srcdir = .
 SUBDIRS = pixman test
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = pixman-1.pc

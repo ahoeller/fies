@@ -22,8 +22,8 @@ trap-crasher.o: trap-crasher.c /usr/include/stdc-predef.h \
  /usr/include/i386-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
  /usr/include/i386-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/i386-linux-gnu/bits/stdlib-float.h \
- /usr/include/i386-linux-gnu/bits/stdlib.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman.h ../pixman/pixman-version.h \
+ /usr/include/i386-linux-gnu/bits/stdlib.h ../pixman/pixman.h \
+ ../pixman/pixman-version.h \
  /usr/lib/gcc/i686-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
  /usr/include/i386-linux-gnu/bits/wchar.h
 
@@ -85,7 +85,7 @@ trap-crasher.o: trap-crasher.c /usr/include/stdc-predef.h \
 
 /usr/include/i386-linux-gnu/bits/stdlib.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman.h:
+../pixman/pixman.h:
 
 ../pixman/pixman-version.h:
 

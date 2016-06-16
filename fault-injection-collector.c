@@ -1,3 +1,9 @@
+/*
+ * fault-injection.c
+ *
+ *  Created on: 05.08.2014
+ *      Author: Gerhard Schoenfelder
+ */
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -24,7 +30,7 @@ void data_collector_write(const char* buf)
 {
     if (do_fault_injection)
     {
- 	    data_collector = fopen("data_collector.txt", "a+");
+ 	    data_collector = fopen("fies.log", "a+");
     	if (data_collector == NULL)
        	{
     		fprintf(stderr, "File  does not exists!\n");

@@ -29,14 +29,12 @@ scaling-test.o: scaling-test.c /usr/include/stdc-predef.h \
  /usr/include/i386-linux-gnu/bits/sys_errlist.h \
  /usr/include/i386-linux-gnu/bits/stdio.h \
  /usr/include/i386-linux-gnu/bits/stdio2.h utils.h ../config.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman-private.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman.h ../pixman/pixman-version.h \
+ ../pixman/pixman-private.h ../pixman/pixman.h ../pixman/pixman-version.h \
  /usr/lib/gcc/i686-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
  /usr/include/i386-linux-gnu/bits/wchar.h /usr/include/xlocale.h \
  /usr/include/string.h /usr/include/i386-linux-gnu/bits/string.h \
  /usr/include/i386-linux-gnu/bits/string2.h \
- /usr/include/i386-linux-gnu/bits/string3.h \
- /home/bernhardsp/Quemu/pixman/pixman/pixman-compiler.h
+ /usr/include/i386-linux-gnu/bits/string3.h ../pixman/pixman-compiler.h
 
 /usr/include/stdc-predef.h:
 
@@ -120,9 +118,9 @@ utils.h:
 
 ../config.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman-private.h:
+../pixman/pixman-private.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman.h:
+../pixman/pixman.h:
 
 ../pixman/pixman-version.h:
 
@@ -142,4 +140,4 @@ utils.h:
 
 /usr/include/i386-linux-gnu/bits/string3.h:
 
-/home/bernhardsp/Quemu/pixman/pixman/pixman-compiler.h:
+../pixman/pixman-compiler.h:

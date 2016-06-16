@@ -3,4 +3,4 @@
 # Run this file to recreate the current configuration.
 # Compiler output produced by configure, useful for debugging
 # configure, is in config.log if it exists.
-exec './configure' '--target-list=arm-softmmu' '--extra-cflags=-I/usr/include/libxml2' '--extra-ldflags=-lxml2'
+exec './configure' '--target-list=arm-softmmu' '--extra-cflags=-I/usr/include/libxml2' '--extra-ldflags=-lxml2' '--enable-sdl'

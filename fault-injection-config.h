@@ -46,7 +46,7 @@
  * Defines the name and path of the file, where the data collector writes
  * his information to.
  */
-#define DATA_COLLECTOR_FILENAME	"data_collector.txt"
+#define DATA_COLLECTOR_FILENAME	"fies.log"
 
 /**
  * Defines the amount of cycles, before the  fault injection experiment is terminated.

@@ -1,3 +1,10 @@
+/*
+ * fault-injection-controller.h
+ *
+ *  Created on: 17.08.2014
+ *      Author: Gerhard Schoenfelder
+ */
+
 #ifndef FAULT_INJECTION_CONTROLLER_H_
 #define FAULT_INJECTION_CONTROLLER_H_
 

@@ -100,3 +100,6 @@ XML Fields:
 * `<component>`: Defines the victim component (`CPU`, `RAM`, or `REGISTER`)
 * `<target>`: Defines the target point of a fault as follows...
   * for `CPU` faults: `INSTRUCTION DECODER`, `INSTRUCTION EXECUTION`, or `CONDITION FLAGS`
+  * for `REGISTER` faults: `ADDRESS DECODER`, `REGISTER CELL`
+  * for `RAM` FAULTS: `ADDRESS DECODER`, `MEMORY CELL`
+ 

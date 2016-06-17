@@ -97,9 +97,27 @@ XML fault lib example:
 XML Fields:
 * `<fault>`: Defines start and end of fault description. Multiple faults are injected concurrently if multiple fault descriptions are provided.
 * `<id>`: Defines fault ID
-* `<component>`: Defines the victim component (`CPU`, `RAM`, or `REGISTER`)
-* `<target>`: Defines the target point of a fault as follows...
+* `<component>`: `CPU`, `RAM`, or `REGISTER`
+* `<target>`:
   * for `CPU` faults: `INSTRUCTION DECODER`, `INSTRUCTION EXECUTION`, or `CONDITION FLAGS`
   * for `REGISTER` faults: `ADDRESS DECODER`, `REGISTER CELL`
-  * for `RAM` FAULTS: `ADDRESS DECODER`, `MEMORY CELL`
- 
+  * for `RAM` faults: `ADDRESS DECODER`, `MEMORY CELL`
+* `<mode>`: Defines the fault mode
+  * Condition flags: `VF`, `ZF`, `CF`, `NF`, `QF`
+  * General fault modes: `NEW VALUE`, `SF`, `BIT-FLIP`
+  * Operation-dependent static faults: `TF0`, `TF1`, `WDF0`, `WDF1`, `IRF0`, `IRF1`,
+`DRDF0`, `DRDF1`, `RDF0`, `RDF1`
+  * Operation-dependent dynamic faults: `RDF00`, `RDF01`, `RDF10`, `RDF11`, `IRF00`, `IRF01`, `IRF10`, `IRF11`, `DRDF00`, `DRDF01`, `DRDF10`, `DRDF11`
+  * Coupling faults: `CFST00`, `CFST01`, `CFST10`, `CFST11`, `CFTR00`, `CFTR01`, `CFTR10`, `CFTR11`, `CFWD00`, `CFWD01`, `CFWD10`, `CFWD11`, `CFRD00`, `CFRD01`, `CFRD10`, `CFRD11`, `CFIR00`, `CFIR01`, `CFIR10`, `CFIR11`, `CFDR00`, `CFDR01`, `CFDR10`, `CFDR11`, `CFDS0W00`, `CFDS0W01`, `CFDS0W10`, `CFDS0W11`, `CFDSW00`, `CFDS1W01`, `CFDS1W10`, `CFDS1W11`, `CFDS0R00`, `CFDS0R01`, `CFDS0R10`, `CFDS1R11`
+* `<trigger>`: `ACCESS`, `TIME`, `PC`
+* `<type>`: `TRANSIENT`, `PERMANENT`, `INTERMITTEND`
+* `<duration>`: duration for intemittend and transient faults in ms (e.g. `10MS`)
+* `<interval>`: interval for intermittent faults in ms (e.g. `10MS`)
+* `<params>`: parameter descriptions to specify fault mode
+  *`<address>`: register or memory address
+  *`<mask>`: mask for the position where fault should be active (e.g. to inject fault in last bit `0x1`), or new value definition in `NEW VALUE` mode
+  *`<cf_address>`: coupling addrsss for coupling faults
+  *`<instruction>`: instruction number that should be replaced for `CPU INSTRUCTION DECODER` faults 
+  *`<set_bit>`: mask to select if bits defined in `<mask>` should be set (e.g. `0x1` for SAF-1) or resetted (e.g. `0x0` for SAF-0). Aggressor-bit mask for intercoupling faults.
+
+

@@ -5017,39 +5017,8 @@ static void fault_injection_controller_register_address(CPUArchState *env, hwadd
 void start_automatic_test_process(CPUArchState *env)
 {
 	static int already_set = 0, shutting_down = 0;
-	//int sbst_cycle_count_value = 0;
-	//int file_input_to_use_value = 0;
-	//uint8_t *membytes = (uint8_t *)&sbst_cycle_count_value;
-	//uint8_t *membytes_file_input = (uint8_t *)&file_input_to_use_value;
+	
 	CPUState *cpu;
-
-	//error_report("start automatic test process\n");
-	
-
-	// GET SBSCT_CYCLE_COUNT
-	
-	
-
-
-	//if (!sbst_cycle_count_address || !file_input_to_use_address)
-	//	return;
-
-	//if (env)
-	//{
-		//cpu = ENV_GET_CPU(env);
-		//cpu_memory_rw_debug(cpu, sbst_cycle_count_address, membytes, 4, 0);
-		//cpu_memory_rw_debug(cpu, file_input_to_use_address, membytes_file_input, 4, 0);
-	//}
-
-		
-	// SET INPUT ID
-
-	/*if (file_input_to_use_value == -1 && !file_input_already_set){
-
-		file_input_already_set=1;
-		set_input_file_to_use(file_input_to_use);
-	}*/
-
 
 	if (!already_set)
 	{

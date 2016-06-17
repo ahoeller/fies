@@ -753,7 +753,7 @@ int qemu_timedate_diff(struct tm *tm)
             struct tm tmp = *tm;
             tmp.tm_isdst = -1; /* use timezone to figure it out */
             seconds = mktime(&tmp);
-	}
+    }
     else
         seconds = mktimegm(tm) + rtc_date_offset;
 
@@ -2845,16 +2845,16 @@ int main(int argc, char **argv, char **envp)
     const char *initrd_filename;
     const char *kernel_filename, *kernel_cmdline;
     const char *boot_order;
- 	char *sep_str, *opt_str;
- 	int param_num = 0;
- 	enum parameter_names
- 	{
- 		//fault_counter,
- 		fault_library_path,
- 		//sbst_cycle_count,
- 		//file_input_to_use_index,
- 		//file_input_to_use_address_index
- 	};
+    char *sep_str, *opt_str;
+    int param_num = 0;
+    enum parameter_names
+    {
+        //fault_counter,
+        fault_library_path,
+        //sbst_cycle_count,
+        //file_input_to_use_index,
+        //file_input_to_use_address_index
+    };
     DisplayState *ds;
     int cyls, heads, secs, translation;
     QemuOpts *hda_opts = NULL, *opts, *machine_opts;
@@ -2987,7 +2987,7 @@ int main(int argc, char **argv, char **envp)
         if (optind >= argc)
             break;
         if (argv[optind][0] != '-') {
-	    hda_opts = drive_add(IF_DEFAULT, 0, argv[optind++], HD_OPTS);
+        hda_opts = drive_add(IF_DEFAULT, 0, argv[optind++], HD_OPTS);
         } else {
             const QEMUOption *popt;
 
@@ -3035,15 +3035,15 @@ int main(int argc, char **argv, char **envp)
                 if (drive_def(optarg) == NULL) {
                     exit(1);
                 }
-	        break;
+            break;
             case QEMU_OPTION_set:
                 if (qemu_set_option(optarg) != 0)
                     exit(1);
-	        break;
+            break;
             case QEMU_OPTION_global:
                 if (qemu_global_option(optarg) != 0)
                     exit(1);
-	        break;
+            break;
             case QEMU_OPTION_mtdblock:
                 drive_add(IF_MTD, -1, optarg, MTD_OPTS);
                 break;
@@ -3090,7 +3090,7 @@ int main(int argc, char **argv, char **envp)
                         fprintf(stderr, "qemu: invalid physical CHS format\n");
                         exit(1);
                     }
-		    if (hda_opts != NULL) {
+            if (hda_opts != NULL) {
                         char num[16];
                         snprintf(num, sizeof(num), "%d", cyls);
                         qemu_opt_set(hda_opts, "cyls", num);
@@ -3269,9 +3269,9 @@ int main(int argc, char **argv, char **envp)
             case QEMU_OPTION_S:
                 autostart = 0;
                 break;
-	    case QEMU_OPTION_k:
-		keyboard_layout = optarg;
-		break;
+        case QEMU_OPTION_k:
+        keyboard_layout = optarg;
+        break;
             case QEMU_OPTION_localtime:
                 rtc_utc = 0;
                 break;
@@ -3473,9 +3473,9 @@ int main(int argc, char **argv, char **envp)
             case QEMU_OPTION_debugcon:
                 add_device_config(DEV_DEBUGCON, optarg);
                 break;
-	    case QEMU_OPTION_loadvm:
-		loadvm = optarg;
-		break;
+        case QEMU_OPTION_loadvm:
+        loadvm = optarg;
+        break;
             case QEMU_OPTION_full_screen:
                 full_screen = 1;
                 break;
@@ -3571,86 +3571,86 @@ int main(int argc, char **argv, char **envp)
                 qemu_opts_parse(olist, "usb=on", 0);
                 break;
             case QEMU_OPTION_profiling:
-            	error_report("QEMU started with Profiling");
-            	if (!optarg)
-            	{
-            		//if no options are given all profiling functions are activated
-            		profile_ram_addresses = 1;
-            		profile_condition_flags = 1;
-            		profile_pc_status = 1;
-            		profile_registers = 1;
-            	}
-            	opt_str = (char*)malloc((strlen(optarg)+1) * sizeof(char));
-             	strcpy(opt_str, optarg);
-             	int i;
-             	for (i = 0; i < strlen(opt_str); i++)
-             	{
-             		char c = opt_str[i];
-             		switch (c) {
-						case 'r':
-							profile_registers = 1;
-							error_report("Profile registers");
-							break;
-						case 'm':
-							profile_ram_addresses = 1;
-							error_report("Profile memory");
-							break;
-						case 'c':
-							profile_condition_flags = 1;
-							break;
-						case 'p':
-							profile_pc_status = 1;
-							break;
-						default:
-							break;
-					}
-             	}
-            	break;
+                error_report("QEMU started with Profiling");
+                if (!optarg)
+                {
+                    //if no options are given all profiling functions are activated
+                    profile_ram_addresses = 1;
+                    profile_condition_flags = 1;
+                    profile_pc_status = 1;
+                    profile_registers = 1;
+                }
+                opt_str = (char*)malloc((strlen(optarg)+1) * sizeof(char));
+                strcpy(opt_str, optarg);
+                int i;
+                for (i = 0; i < strlen(opt_str); i++)
+                {
+                    char c = opt_str[i];
+                    switch (c) {
+                        case 'r':
+                            profile_registers = 1;
+                            error_report("Profile registers");
+                            break;
+                        case 'm':
+                            profile_ram_addresses = 1;
+                            error_report("Profile memory");
+                            break;
+                        case 'c':
+                            profile_condition_flags = 1;
+                            break;
+                        case 'p':
+                            profile_pc_status = 1;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                break;
             case QEMU_OPTION_fi:
-            	/*
-            	 * no automation!
-            	 */
-            	error_report("QEMU started with Fault Injection");
-            	if (!optarg)
-            	{
+                /*
+                 * no automation!
+                 */
+                error_report("QEMU started with Fault Injection");
+                if (!optarg)
+                {
                     set_do_fault_injection(1);
                     break;
-            	}
+                }
 
-            	opt_str = (char*)malloc((strlen(optarg)+1) * sizeof(char));
-             	strcpy(opt_str, optarg);
+                opt_str = (char*)malloc((strlen(optarg)+1) * sizeof(char));
+                strcpy(opt_str, optarg);
 
-             	sep_str = strtok(opt_str, ",");
+                sep_str = strtok(opt_str, ",");
 
-            	for (param_num = 0; sep_str != NULL; param_num++)
-            	{
-            		switch(param_num)
-            		{
-            	/*	case fault_counter:
-						fault_counter_address =  strtol(sep_str, NULL, 16);
-            			break;*/
-            		case fault_library_path:
-            			fault_library_name = (char*)malloc((strlen(sep_str) + 1) * sizeof(char));
-						strcpy(fault_library_name, sep_str);
-						error_report("Fault libary name: %s",fault_library_name);
-            			break;
-            		/*case sbst_cycle_count:
-						//sbst_cycle_count_address =  strtol(sep_str, NULL, 16);
-            			break;
-            		case file_input_to_use_index:
+                for (param_num = 0; sep_str != NULL; param_num++)
+                {
+                    switch(param_num)
+                    {
+                /*  case fault_counter:
+                        fault_counter_address =  strtol(sep_str, NULL, 16);
+                        break;*/
+                    case fault_library_path:
+                        fault_library_name = (char*)malloc((strlen(sep_str) + 1) * sizeof(char));
+                        strcpy(fault_library_name, sep_str);
+                        error_report("Fault libary name: %s",fault_library_name);
+                        break;
+                    /*case sbst_cycle_count:
+                        //sbst_cycle_count_address =  strtol(sep_str, NULL, 16);
+                        break;
+                    case file_input_to_use_index:
                         file_input_to_use = strtol(sep_str, NULL, 16);
                         break;
                     case file_input_to_use_address_index:
                         file_input_to_use_address = strtol(sep_str, NULL, 16);
                         break;*/
-            		default:
-            			fprintf(stderr, "Too many parameters specified!\n");
-            			error_report("Too many parameters specified!\n");
-            			break;
-            		}
+                    default:
+                        fprintf(stderr, "Too many parameters specified!\n");
+                        error_report("Too many parameters specified!\n");
+                        break;
+                    }
 
-            		sep_str = strtok(NULL, ",");
-            	}
+                    sep_str = strtok(NULL, ",");
+                }
 
                 set_do_fault_injection(1);
                // fault_reload_arg();
@@ -3672,7 +3672,7 @@ int main(int argc, char **argv, char **envp)
                     exit(1);
                 }
                 break;
-	    case QEMU_OPTION_vnc:
+        case QEMU_OPTION_vnc:
 #ifdef CONFIG_VNC
                 display_remote++;
                 vnc_display = optarg;
@@ -3710,11 +3710,11 @@ int main(int argc, char **argv, char **envp)
                 }
                 qemu_uuid_set = true;
                 break;
-	    case QEMU_OPTION_option_rom:
-		if (nb_option_roms >= MAX_OPTION_ROMS) {
-		    fprintf(stderr, "Too many option ROMs\n");
-		    exit(1);
-		}
+        case QEMU_OPTION_option_rom:
+        if (nb_option_roms >= MAX_OPTION_ROMS) {
+            fprintf(stderr, "Too many option ROMs\n");
+            exit(1);
+        }
                 opts = qemu_opts_parse(qemu_find_opts("option-rom"), optarg, 1);
                 if (!opts) {
                     exit(1);
@@ -3726,8 +3726,8 @@ int main(int argc, char **argv, char **envp)
                     fprintf(stderr, "Option ROM file is not specified\n");
                     exit(1);
                 }
-		nb_option_roms++;
-		break;
+        nb_option_roms++;
+        break;
             case QEMU_OPTION_semihosting:
                 semihosting_enabled = 1;
                 break;
@@ -3737,18 +3737,18 @@ int main(int argc, char **argv, char **envp)
                 break;
             case QEMU_OPTION_name:
                 qemu_name = g_strdup(optarg);
-		 {
-		     char *p = strchr(qemu_name, ',');
-		     if (p != NULL) {
-		        *p++ = 0;
-			if (strncmp(p, "process=", 8)) {
-			    fprintf(stderr, "Unknown subargument %s to -name\n", p);
-			    exit(1);
-			}
-			p += 8;
-			os_set_proc_name(p);
-		     }
-		 }
+         {
+             char *p = strchr(qemu_name, ',');
+             if (p != NULL) {
+                *p++ = 0;
+            if (strncmp(p, "process=", 8)) {
+                fprintf(stderr, "Unknown subargument %s to -name\n", p);
+                exit(1);
+            }
+            p += 8;
+            os_set_proc_name(p);
+             }
+         }
                 break;
             case QEMU_OPTION_prom_env:
                 if (nb_prom_envs >= MAX_PROM_ENVS) {
@@ -4389,7 +4389,7 @@ int main(int argc, char **argv, char **envp)
     /* init local displays */
     switch (display_type) {
     case DT_NOGRAPHIC:
-        (void)ds;	/* avoid warning if no display is configured */
+        (void)ds;   /* avoid warning if no display is configured */
         break;
 #if defined(CONFIG_CURSES)
     case DT_CURSES:

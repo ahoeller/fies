@@ -6,6 +6,11 @@ FIES is a QEMU fault injection extension.
 The following picture shows the main points, where FIES takes action during an QEMU binary translation:
 ![TCG Image](fies_doc/fies_tcg.png)
 
+The working principle of FIES is described in the following publications:
+* A. Höller, G. Schönfelder, N. Kajtazovic, T. Rauter, and C. Kreiner, “FIES: A Fault Injection Framework for the Evaluation of Self-Tests for COTS-Based Safety-Critical Systems,” in 15th IEEE International Microprocessor Test and Verification Workshop (MTV), 2014, vol. 2015-April, pp. 105–110.
+* A. Höller, G. Macher, T. Rauter, J. Iber, and C. Kreiner, “A Virtual Fault Injection Framework for Reliability-Aware Software Development,” in IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W), 2015, pp. 69 – 74.
+* A. Höller, A. Krieg, T. Rauter, J. Iber, and C. Kreiner, “QEMU-Based Fault Injection for a System-Level Analysis of Software Countermeasures Against Fault Attacks,” in 18th Euromicro Conference on Digital System Design (DSD), 2015, pp. 530 – 533.
+
 Building FIES
 --------------
 

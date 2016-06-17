@@ -4,8 +4,7 @@ FIES - Fault Injection for Evaluation of Software-based fault tolerance
 FIES is a QEMU fault injection extension.
  
 The following picture shows the main points, where FIES takes action during an QEMU binary translation:
-![alt tag](https://github.com/ahoeller/fies/blob/master/fies_doc/fies_tcg.svg)
-
+![TCG Image](fies_tcg.svg)
 
 Building FIES
 --------------

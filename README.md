@@ -120,4 +120,11 @@ XML Fields:
   *`<instruction>`: instruction number that should be replaced for `CPU INSTRUCTION DECODER` faults 
   *`<set_bit>`: mask to select if bits defined in `<mask>` should be set (e.g. `0x1` for SAF-1) or resetted (e.g. `0x0` for SAF-0). Aggressor-bit mask for intercoupling faults.
 
+#### Execute software and inject fault
+Use the `-fi` flag to give the fault library and start FIES with fault injection
 
+```splus
+arm-softmmu/qemu-system-arm -semihosting -kernel <binary> -fi <fault-lib.xml>
+```
+
+See `fies.log` for error messages

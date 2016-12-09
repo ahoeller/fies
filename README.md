@@ -119,11 +119,11 @@ XML Fields:
 * `<duration>`: duration for intemittend and transient faults in ms (e.g. `10MS`)
 * `<interval>`: interval for intermittent faults in ms (e.g. `10MS`)
 * `<params>`: parameter descriptions to specify fault mode
-  *`<address>`: register or memory address
-  *`<mask>`: mask for the position where fault should be active (e.g. to inject fault in last bit `0x1`), or new value definition in `NEW VALUE` mode
-  *`<cf_address>`: coupling addrsss for coupling faults
-  *`<instruction>`: instruction number that should be replaced for `CPU INSTRUCTION DECODER` faults 
-  *`<set_bit>`: mask to select if bits defined in `<mask>` should be set (e.g. `0x1` for SAF-1) or resetted (e.g. `0x0` for SAF-0). Aggressor-bit mask for intercoupling faults.
+  * `<address>`: register or memory address
+  * `<mask>`: mask for the position where fault should be active (e.g. to inject fault in last bit `0x1`), or new value definition in `NEW VALUE` mode
+  * `<cf_address>`: coupling addrsss for coupling faults
+  * `<instruction>`: instruction number that should be replaced for `CPU INSTRUCTION DECODER` faults 
+  * `<set_bit>`: mask to select if bits defined in `<mask>` should be set (e.g. `0x1` for SAF-1) or resetted (e.g. `0x0` for SAF-0). Aggressor-bit mask for intercoupling faults.
 
 #### Execute software and inject fault
 Use the `-fi` flag to give the fault library and start FIES with fault injection

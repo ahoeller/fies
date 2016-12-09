@@ -17,7 +17,8 @@ Building FIES
 ```splus
 CF=$(xml2-config --cflags)
 LF=$(xml2-config --libs)
-./configure --target-list=arm-softmmu --extra-cflags="$CF" --extra-ldflags="$LF" --enable-sdl
+PP=$(which python2)
+./configure --target-list=arm-softmmu --extra-cflags="$CF" --extra-ldflags="$LF" --python="$PP" --enable-sdl
 cd pixman
 ./configure
 cd ..

@@ -17,7 +17,8 @@ Building FIES
 ```splus
 CF=$(xml2-config --cflags)
 LF=$(xml2-config --libs)
-./configure --target-list=arm-softmmu --extra-cflags=$CF --extra-ldflags=$LF --enable-sdl
+PP=$(which python2)
+./configure --target-list=arm-softmmu --extra-cflags="$CF" --extra-ldflags="$LF" --python="$PP" --enable-sdl
 cd pixman
 ./configure
 cd ..
@@ -95,8 +96,8 @@ XML fault lib example:
 ```
 
 XML Fields:
-*`<fault>`: Defines start and end of fault description. Multiple faults are injected concurrently if multiple fault descriptions are provided.
-*`<id>`: Defines fault ID
-*`<component>`: Defines the victim component (`CPU`, `RAM`, or `REGISTER`)
-*`<target>`: Defines the target point of a fault as follows...
-**for `CPU` faults: `INSTRUCTION DECODER`, `INSTRUCTION EXECUTION`, or `CONDITION FLAGS`
+* `<fault>`: Defines start and end of fault description. Multiple faults are injected concurrently if multiple fault descriptions are provided.
+* `<id>`: Defines fault ID
+* `<component>`: Defines the victim component (`CPU`, `RAM`, or `REGISTER`)
+* `<target>`: Defines the target point of a fault as follows...
+  * for `CPU` faults: `INSTRUCTION DECODER`, `INSTRUCTION EXECUTION`, or `CONDITION FLAGS`

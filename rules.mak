@@ -27,9 +27,9 @@ QEMU_INCLUDES += -I$(<D) -I$(@D)
 	$(call quiet-command,$(WINDRES) -I. -o $@ $<,"  RC    $(TARGET_DIR)$@")
 
 ifeq ($(LIBTOOL),)
-LINK = $(call quiet-command,$(CC) $(QEMU_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@ \
+LINK = $(call quiet-command,$(CC) -o $@ \
        $(sort $(filter %.o, $1)) $(filter-out %.o, $1) $(version-obj-y) \
-       $(LIBS),"  LINK  $(TARGET_DIR)$@")
+       $(LIBS) $(QEMU_CFLAGS) $(CFLAGS) $(LDFLAGS),"  LINK  $(TARGET_DIR)$@")
 else
 LIBTOOL += $(if $(V),,--quiet)
 %.lo: %.c
@@ -41,11 +41,11 @@ LIBTOOL += $(if $(V),,--quiet)
 
 LINK = $(call quiet-command,\
        $(if $(filter %.lo %.la,$^),$(LIBTOOL) --mode=link --tag=CC \
-       )$(CC) $(QEMU_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@ \
+       )$(CC) -o $@ \
        $(sort $(filter %.o, $1)) $(filter-out %.o, $1) \
        $(if $(filter %.lo %.la,$^),$(version-lobj-y),$(version-obj-y)) \
        $(if $(filter %.lo %.la,$^),$(LIBTOOLFLAGS)) \
-       $(LIBS),$(if $(filter %.lo %.la,$^),"lt LINK ", "  LINK  ")"$(TARGET_DIR)$@")
+       $(LIBS) $(QEMU_CFLAGS) $(CFLAGS) $(LDFLAGS),$(if $(filter %.lo %.la,$^),"lt LINK ", "  LINK  ")"$(TARGET_DIR)$@")
 endif
 
 %.asm: %.S

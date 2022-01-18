@@ -17,12 +17,18 @@ Building FIES
 * Install required libraries: libffi, libiconv, gettext, python, pkg-config, glib, sdl, zlib, pixman, libfdt, libxml2
   For detailed information about QEMU-required packages see http://wiki.qemu.org/Hosts/Linux . Additionally FIES requires `libxml2`.
 
+To install dependencies on Ubuntu:
+```
+sudo apt install libffi6 libffi-dev libc6-dev gettext python pkg-config libsdl2-dev zlib1g-dev libpixman-1-dev libfdt-dev libxml2-dev
+sudo apt install libsdl1.2debian libsdl-gfx1.2-5 libsdl-gfx1.2-dev libsdl-gfx1.2-doc libsdl-image1.2 libsdl-image1.2-dbg libsdl-image1.2-dev libsdl-mixer1.2 libsdl-mixer1.2-dbg libsdl-mixer1.2-dev libsdl-net1.2 libsdl-net1.2-dbg libsdl-net1.2-dev libsdl-sound1.2 libsdl-sound1.2-dev libsdl-ttf2.0-0 libsdl-ttf2.0-dev
+```
+
 * Configure and build FIES
 ```splus
 CF=$(xml2-config --cflags)
 LF=$(xml2-config --libs)
 PP=$(which python2)
-./configure --target-list=arm-softmmu --extra-cflags="$CF" --extra-ldflags="$LF" --python="$PP" --enable-sdl
+./configure --target-list=arm-softmmu --extra-cflags="$CF" --extra-ldflags="$LF" --python="$PP" --enable-sdl --disable-werror
 cd pixman
 ./configure
 cd ..
